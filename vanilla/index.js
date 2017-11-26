@@ -27,4 +27,5 @@ function render () {
 
   appEl.appendChild(Pagination(state))
   appEl.appendChild(Table(state))
+  appEl.appendChild(Pagination(state))
 }

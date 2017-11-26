@@ -1,5 +1,5 @@
 /**
- * Get current page from browser hash (#page=1).
+ * Get current page from browser hash (#1, #2, #3, ...).
  *
  * @returns {number}
  */
