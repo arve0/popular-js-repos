@@ -32,6 +32,11 @@ export default {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+#pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 #pagination a {
   border-left: 1px solid;
   border-top: 1px solid;
