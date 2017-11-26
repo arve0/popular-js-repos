@@ -22,6 +22,7 @@ export default {
 <style scoped>
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 td, th {
   padding: 0.5em;
@@ -29,6 +30,7 @@ td, th {
 }
 th:hover {
   cursor: pointer;
+  transform: translateY(-2px);
 }
 tr:nth-child(2n + 1) {
   background-color: lightblue;

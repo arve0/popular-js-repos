@@ -107,11 +107,20 @@ export default {
 
 <!-- style is not scoped to apply to whole app -->
 <style>
+body {
+  background-color:aliceblue;
+}
 #app {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 #header {
   min-height: 8em;
