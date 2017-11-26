@@ -2,9 +2,11 @@
   <div id="app">
     <div id="header">
       <img src="./assets/Octocat.jpg">
-      <h1>100 most popular js repos on Github</h1>
+      <div>
+        <h1>100 most popular js repos on Github</h1>
+      </div>
     </div>
-    <div id="loading" v-if="repos.length === 0">Loading, please wait...</div>
+    <div id="loading" v-if="repos.length === 0">{{message}}</div>
 
     <div v-if="repos.length">
       <Pagination :page="page" :pages="pages" />
@@ -28,6 +30,7 @@ export default {
   },
   data () {
     return {
+      message: 'Loading, please wait...',
       repos: [],
       page: currentPage(),
       pageSize: 20,
@@ -56,6 +59,8 @@ export default {
     githubMostPopular().then(res => {
       this.repos = res
       this.pages = Math.floor(res.length / this.pageSize)
+    }).catch(err => {
+      this.message = `Klarte ikke hente repoer fra Github, feilet med: "${err.message}"`
     })
 
     window.onhashchange = () => {
@@ -129,7 +134,8 @@ body {
   height: 8em;
   vertical-align: middle;
 }
-#header h1 {
-  display: inline;
+#header > div {
+  display: inline-block;
+  padding: 0.5em;
 }
 </style>

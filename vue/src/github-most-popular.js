@@ -7,9 +7,13 @@ const URL = 'https://api.github.com/search/repositories?q=language:javascript&so
  */
 export default function () {
   return window.fetch(URL)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) {
+        throw new Error(r.statusText)
+      }
+      return r.json()
+    })
     .then(r => {
       return r.items
     })
-    .catch(() => []) // failback, TODO: show error msg
 }
